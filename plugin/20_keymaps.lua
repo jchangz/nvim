@@ -49,21 +49,21 @@ nmap(']p', '<Cmd>exe "iput "  . v:register<CR>', 'Paste Below')
 -- Create a global table with information about Leader groups in certain modes.
 -- This is used to provide 'mini.clue' with extra clues.
 -- Add an entry if you create a new group.
-Config.leader_group_clues = {
-  { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
-  { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
-  { mode = 'n', keys = '<Leader>f', desc = '+Find' },
-  { mode = 'n', keys = '<Leader>g', desc = '+Git' },
-  { mode = 'n', keys = '<Leader>l', desc = '+Language' },
-  { mode = 'n', keys = '<Leader>m', desc = '+Map' },
-  { mode = 'n', keys = '<Leader>o', desc = '+Other' },
-  { mode = 'n', keys = '<Leader>s', desc = '+Session' },
-  { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
-  { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
+-- Config.leader_group_clues = {
+--   { mode = 'n', keys = '<Leader>b', desc = '+Buffer' },
+--   { mode = 'n', keys = '<Leader>e', desc = '+Explore/Edit' },
+--   { mode = 'n', keys = '<Leader>f', desc = '+Find' },
+--   { mode = 'n', keys = '<Leader>g', desc = '+Git' },
+--   { mode = 'n', keys = '<Leader>l', desc = '+Language' },
+--   { mode = 'n', keys = '<Leader>m', desc = '+Map' },
+--   { mode = 'n', keys = '<Leader>o', desc = '+Other' },
+--   { mode = 'n', keys = '<Leader>s', desc = '+Session' },
+--   { mode = 'n', keys = '<Leader>t', desc = '+Terminal' },
+--   { mode = 'n', keys = '<Leader>v', desc = '+Visits' },
 
-  { mode = 'x', keys = '<Leader>g', desc = '+Git' },
-  { mode = 'x', keys = '<Leader>l', desc = '+Language' },
-}
+--   { mode = 'x', keys = '<Leader>g', desc = '+Git' },
+--   { mode = 'x', keys = '<Leader>l', desc = '+Language' },
+-- }
 
 -- Helpers for a more concise `<Leader>` mappings.
 -- Most of the mappings use `<Cmd>...<CR>` string as a right hand side (RHS) in
@@ -139,7 +139,7 @@ nmap_leader('fc', '<Cmd>Pick git_commits<CR>',                  'Commits (all)')
 nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>',         'Commits (buf)')
 nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic workspace')
 nmap_leader('fD', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
-nmap_leader('ff', '<Cmd>Pick files<CR>',                        'Files')
+-- nmap_leader('ff', '<Cmd>Pick files<CR>',                        'Files')
 nmap_leader('fg', '<Cmd>Pick grep_live<CR>',                    'Grep live')
 nmap_leader('fG', '<Cmd>Pick grep pattern="<cword>"<CR>',       'Grep current word')
 nmap_leader('fh', '<Cmd>Pick help<CR>',                         'Help tags')
