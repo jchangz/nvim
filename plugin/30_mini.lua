@@ -56,7 +56,7 @@ local now, now_if_args, later = Config.now, Config.now_if_args, Config.later
 now(function()
   require('mini.basics').setup({
     -- Manage options in 'plugin/10_options.lua' for didactic purposes
-    options = { basic = false },
+    options = { basic = false, winborder = 'none' },
     mappings = {
       -- Create `<C-hjkl>` mappings for window navigation
       windows = true,
@@ -306,7 +306,7 @@ later(function()
     -- always try to search only covering textobject and explicitly ask to search
     -- for next (`an`/`in`) or last (`al`/`il`).
     -- Try this. If you don't like it - delete next line and this comment.
-    search_method = 'cover',
+    -- search_method = 'cover',
   })
 end)
 
