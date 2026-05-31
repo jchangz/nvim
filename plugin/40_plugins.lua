@@ -116,6 +116,17 @@ end)
 --
 -- The 'stevearc/conform.nvim' plugin is a good and maintained solution for easier
 -- formatting setup.
+local function first(bufnr, ...)
+  local conform = require("conform")
+  for i = 1, select("#", ...) do
+    local formatter = select(i, ...)
+    if conform.get_formatter_info(formatter, bufnr).available then
+      return formatter
+    end
+  end
+  return select(1, ...)
+end
+
 later(function()
   add({ 'https://github.com/stevearc/conform.nvim' })
 
@@ -130,7 +141,14 @@ later(function()
     },
     -- Map of filetype to formatters
     -- Make sure that necessary CLI tool is available
-    -- formatters_by_ft = { lua = { 'stylua' } },
+    formatters_by_ft = { 
+      javascript = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+      javascriptreact = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+      typescript = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+      typescriptreact = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+      json = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+      jsonc = function(bufnr) return { first(bufnr, 'prettierd', 'prettier'), 'tailwindcss-language-server' } end,
+    },
   })
 end)
 
